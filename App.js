@@ -15,7 +15,6 @@ export default function App() {
   const [error, setError] = useState(null)
   const [currentWeather, setCurrentWeather] = useState(null)
   const [unitSystem, setUnitSystem] = useState('metric')
-  const WEATHER_API_KEY = "afae1a82b1b3a5feda0eed4078948984";
   const BASE_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?";
 
   useEffect(()=> {
@@ -35,7 +34,7 @@ export default function App() {
       const location =  await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High });
       const {latitude, longitude} = location.coords;
 
-      const weather_url = `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&units=${unitSystem}&appid=${WEATHER_API_KEY}`
+      const weather_url = `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&units=${unitSystem}&appid=afae1a82b1b3a5feda0eed4078948984`
 
       const response = await fetch(weather_url);
       const result = await response.json();
